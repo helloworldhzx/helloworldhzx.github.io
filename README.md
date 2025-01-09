@@ -1,2 +1,0 @@
-# helloworldhzx.github.io
-blog

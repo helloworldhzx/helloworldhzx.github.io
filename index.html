@@ -17,6 +17,10 @@
     <body>
         <div id="main">
             <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。</div>
+            <audio id="audio" height="100" width="100">
+                <source src="renxi.mp3" type="audio/mp3" />
+                <embed height="100" width="100" src="renxi.mp3" />
+        </audio>
             <div id="wrap">
                 <div id="text">
                     <div id="code" style="line-height: 38px;"> <font color="#FF0000">
@@ -104,10 +108,15 @@
         var hold = 1;
 
         canvas.click(function(e) {
+            const audio = document.querySelector("#audio")
+                if(audio){
+                    audio.play()
+                }
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;
             if (seed.hover(x, y)) {
+                
                 hold = 0; 
                 canvas.unbind("click");
                 canvas.unbind("mousemove");
